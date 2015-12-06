@@ -18,7 +18,7 @@ public class EventList {
 	 * function after all events have been added.
 	 */
 	public void sort() {
-		quickSort(0, events.size() - 1);
+		events.sort(null);
 	}
 
 	/**
