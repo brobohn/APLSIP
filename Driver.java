@@ -1,4 +1,3 @@
-import java.io.RandomAccessFile; 
 import java.io.*;
 
 /**
@@ -21,7 +20,13 @@ public class Driver {
 		lg = new LineGenerator();
 	 
 		String str = "output_file_" + System.currentTimeMillis();
-		RandomAccessFile raf = new RandomAccessFile(new File(str), "rw"); 
+		RandomAccessFile raf = null;
+		try {
+			raf = new RandomAccessFile(new File(str), "rw");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 		A = new Algorithm(raf);
 	}
 
@@ -34,7 +39,12 @@ public class Driver {
 	 */
 	static void runAlgorithm(boolean brute, LineSegment[] lines) {
 		if (brute) {
-			A.bruteForceAlgorithm(lines);
+			try {
+				A.bruteForceAlgorithm(lines);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			A.algorithm(lines, E, sweeper);
 		}
