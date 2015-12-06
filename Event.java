@@ -2,7 +2,7 @@
  * An element in the event list.
  *
  */
-public class Event {
+public class Event implements Comparable<Event> {
 	//Fields
 	Point p1;
 	Point p2;
