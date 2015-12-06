@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.ArrayList;
 
 
 
@@ -168,7 +169,7 @@ public class Algorithm {
 				// Horizontal line: check for intersections
 				HLS hls = (HLS) event.segment;
 				
-				VLS vlss[] = sweeper.printRange(event);
+				ArrayList<VLS> vlss = sweeper.printRange(event);
 				
 				//print vlss
 				for (VLS vls : vlss) {

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * A self-balancing binary search tree.
  */
@@ -200,8 +202,12 @@ public class BBT {
 	 * @param max
 	 * @return
 	 */
-	public VLS[] printRange(int min, int max) {
+	public ArrayList<VLS> printRange(int min, int max) {
 		// TODO
-		return null;
+		ArrayList<VLS> vlss = new ArrayList<VLS>();
+		
+		// search range
+		
+		return vlss;
 	}
 }

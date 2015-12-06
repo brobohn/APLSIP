@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * An abstraction of the algorithm sweeping down the graph. Holds the current
  * vertical line segments in s balanced binary search tree.
@@ -64,7 +66,7 @@ public class SweepLine {
 	 * @param e
 	 * @return 
 	 */
-	public VLS[] printRange(Event e) {
+	public ArrayList<VLS> printRange(Event e) {
 		return tree.printRange(e.p1.getX(), e.p2.getX());
 	}
 
