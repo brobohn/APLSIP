@@ -8,6 +8,10 @@ public class BBN {
 	BBN left;
 	BBN right;
 
+	int value;
+	int height = 0;
+    int size = 1;
+	
 	/**
 	 * Initialize a childless node.
 	 * 
