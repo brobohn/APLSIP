@@ -36,17 +36,17 @@ public class Event {
 	public int compareTo(Event that) {
 		// implement better logic to differentiate between event types
 		if (this.type == EventType.UPPER) {
-			if (this.getY() <= that.getY()) {
+			if (this.getY() >= that.getY()) {
 				return -1;
 			} else {
 				return 1;
 			}
 		}
 		else if (this.type == EventType.HORIZ) {
-			if (this.getY() < that.getY()) {
+			if (this.getY() > that.getY()) {
 				return -1;
 			} 
-			else if (this.getY() > that.getY()) {
+			else if (this.getY() < that.getY()) {
 				return 1;
 			}
 			else {
