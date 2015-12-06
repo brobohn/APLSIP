@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class LineGenerator {
 	final int LENGTH = 25;
-	final int MAX = 1000000;
+	final int MAX = 100;
 	
 	public LineGenerator() 
 	{
