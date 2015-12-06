@@ -37,6 +37,7 @@ public class SweepLine {
 		if (s instanceof VLS) {
 			VLS v = (VLS) s;
 			tree.insert(v);
+			tree.simpleBalance();
 		} else {
 			// you have tried to insert a HLS into the tree
 		}
@@ -50,7 +51,8 @@ public class SweepLine {
 	private void removeSegment(LineSegment s) {
 		if (s instanceof VLS) {
 			VLS v = (VLS) s;
-			tree.remove(v);
+			tree.delete(v);
+			tree.simpleBalance();
 		} else {
 			// you have tried to remove a HLS from the tree
 		}
