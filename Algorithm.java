@@ -129,8 +129,62 @@ public class Algorithm {
 	 * @param sweeper
 	 *            the SweepLine
 	 */
-	public void algorithm(LineSegment[] lines, EventList E, SweepLine sweeper) {
-		// TODO
+	public void algorithm(LineSegment[] lines, EventList E, SweepLine sweeper) throws IOException {
+		// insert lines into E
+		for (LineSegment line : lines) {
+			Event e = null;
+			
+			if (line instanceof HLS) {	//HLS
+				HLS hls = (HLS) line;
+				e = new Event(hls.left, hls.right, hls);
+				E.addEvent(e);
+			} else {					// VLS
+				VLS vls = (VLS) line;
+				
+				//add upper
+				e = new Event(vls.upper, null, vls);
+				E.addEvent(e);
+				
+				//add lower
+				e = new Event(null, vls.lower, vls);
+				E.addEvent(e);
+			}
+			
+		}
+		
+		// sort E
+		E.sort();
+		
+		Event event;
+		
+		// for each event in E
+		while ((event = E.getNextEvent()) != null) {
+			
+			if (event.type == EventType.UPPER) {
+				// Upper endpoint: insert VLS into tree
+				sweeper.addSegment(event.segment);
+						
+			} else if (event.type == EventType.HORIZ) {
+				// Horizontal line: check for intersections
+				HLS hls = (HLS) event.segment;
+				
+				VLS vlss[] = sweeper.printRange(event);
+				
+				//print vlss
+				for (VLS vls : vlss) {
+					int x = vls.getX();
+					int y = hls.getY();
+					
+					String POI = String.format("(%d, %d)", x, y);
+					
+					this.output_file.writeBytes("Intersection at " + POI + ". \n");
+				}
+				
+			} else { // LOWER
+				// Lower endpoint: remove VLS from tree
+				sweeper.removeSegment(event.segment);
+			}
+		}	
 	}
 
 }

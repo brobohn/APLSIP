@@ -76,6 +76,10 @@ public class EventList {
 	 * @return the next event in the series
 	 */
 	public Event getNextEvent() {
-		return events.get(currentEventIndex++);
+		if (currentEventIndex < events.size()) {
+			return events.get(currentEventIndex++);
+		} else {
+			return null;
+		}
 	}
 }

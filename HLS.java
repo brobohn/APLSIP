@@ -14,6 +14,14 @@ public class HLS extends LineSegment {
 		this.right = right;
 	}
 	
+	/**
+	 * Get the y-coordinate of the segment.
+	 * 
+	 * @return the y-coordinate of the segment
+	 */
+	public int getY() {
+		return left.getY();
+	}
 	
 	/**
 	 * Return a String representation of this HLS.
