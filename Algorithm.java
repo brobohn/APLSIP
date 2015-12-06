@@ -90,7 +90,11 @@ public class Algorithm {
 							num_intersections++;
 							String line_index = Integer.toString(i);
 							String other_line_index = Integer.toString(j);
-							this.output_file.writeBytes("Intersection between the segment "
+							// point of intersection = POI
+							String POI = "(" + Integer.toString(vert_x) + ", " +
+										Integer.toString(horz_y) + ")";
+							this.output_file.writeBytes("Intersection at "
+									+ POI + " between the segment "
 									+ line_index + " and the segment " + 
 									other_line_index + ". \n");
 						}
