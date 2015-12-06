@@ -33,7 +33,7 @@ public class SweepLine {
 	 * 
 	 * @param e
 	 */
-	private void addSegment(LineSegment s) {
+	public void addSegment(LineSegment s) {
 		if (s instanceof VLS) {
 			VLS v = (VLS) s;
 			tree.insert(v);
@@ -48,7 +48,7 @@ public class SweepLine {
 	 * 
 	 * @param e
 	 */
-	private void removeSegment(LineSegment s) {
+	public void removeSegment(LineSegment s) {
 		if (s instanceof VLS) {
 			VLS v = (VLS) s;
 			tree.delete(v);
@@ -62,9 +62,10 @@ public class SweepLine {
 	 * Report all line segments in the tree that lie within the range of e.
 	 * 
 	 * @param e
+	 * @return 
 	 */
-	private void printRange(Event e) {
-		tree.printRange(e.p1.getX(), e.p2.getX());
+	public VLS[] printRange(Event e) {
+		return tree.printRange(e.p1.getX(), e.p2.getX());
 	}
 
 }

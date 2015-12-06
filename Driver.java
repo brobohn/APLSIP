@@ -24,7 +24,6 @@ public class Driver {
 		try {
 			raf = new RandomAccessFile(new File(str), "rw");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 		A = new Algorithm(raf);
@@ -42,11 +41,14 @@ public class Driver {
 			try {
 				A.bruteForceAlgorithm(lines);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
-			A.algorithm(lines, E, sweeper);
+			try {
+				A.algorithm(lines, E, sweeper);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
