@@ -1,3 +1,6 @@
+import java.io.RandomAccessFile; 
+import java.io.*;
+
 /**
  * Initializes data structures, parses input, runs the sweep line algorithm,
  * reports intersections.
@@ -16,7 +19,10 @@ public class Driver {
 		sweeper = new SweepLine();
 		E = new EventList();
 		lg = new LineGenerator();
-		A = new Algorithm();
+	 
+		String str = "output_file_" + System.currentTimeMillis();
+		RandomAccessFile raf = new RandomAccessFile(new File(str), "rw"); 
+		A = new Algorithm(raf);
 	}
 
 	/**
