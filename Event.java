@@ -9,7 +9,6 @@ public class Event {
 	LineSegment segment;
 	EventType type;
 	
-	// TODO create constructors for each type of event
 	
 	
 	public Event(Point p1, Point p2, LineSegment segment) {
@@ -17,7 +16,6 @@ public class Event {
 		this.p2 = p2;
 		this.segment = segment;
 		
-		// TODO this could be more efficient, laid out this way for clarity
 		if (p1 != null && p2 == null) {
 			this.type = EventType.UPPER;
 		} else if (p1 != null && p2 != null) {
@@ -37,10 +35,41 @@ public class Event {
 	
 	public int compareTo(Event that) {
 		// implement better logic to differentiate between event types
-		if (this.getY() <= that.getY()) {
-			return -1;
-		} else {
-			return 1;
+		if (this.type == EventType.UPPER) {
+			if (this.getY() <= that.getY()) {
+				return -1;
+			} else {
+				return 1;
+			}
+		}
+		else if (this.type == EventType.HORIZ) {
+			if (this.getY() < that.getY()) {
+				return -1;
+			} 
+			else if (this.getY() > that.getY()) {
+				return 1;
+			}
+			else {
+				// Y-values are equal.
+				// We need to check if that is an UPPER. If so, it comes before
+				// this and thus we need to return 1 to denote that this comes
+				// later in the list than that.
+				if (that.type == EventType.UPPER) {
+					return 1;
+				}
+				else {
+					return -1;
+				}
+			}
+		}
+		else {
+			// Event Type is LOWER. It comes after other events with equivalent
+			// y-values.
+			if (this.getY() < that.getY()) { //note the change to strict ineq.
+				return -1;
+			} else {
+				return 1;
+			}
 		}
 	}
 }
