@@ -24,7 +24,7 @@ public class Algorithm {
 	 */
 	public void bruteForceAlgorithm(LineSegment[] lines) throws IOException {
 		int num_lines = lines.length;
-		this.output_file.writeChars("Running the brute force algorithm. \n");
+		this.output_file.writeBytes("Running the brute force algorithm. \n");
 		int num_intersections = 0;
 		//Looping through the lines array.
 		
@@ -57,7 +57,7 @@ public class Algorithm {
 							num_intersections++;
 							String line_index = Integer.toString(i);
 							String other_line_index = Integer.toString(j);
-							this.output_file.writeChars("Intersection between the segment "
+							this.output_file.writeBytes("Intersection between the segment "
 									+ line_index + " and the segment " + 
 									other_line_index + ". \n");
 						}
@@ -86,7 +86,7 @@ public class Algorithm {
 							num_intersections++;
 							String line_index = Integer.toString(i);
 							String other_line_index = Integer.toString(j);
-							this.output_file.writeChars("Intersection between the segment "
+							this.output_file.writeBytes("Intersection between the segment "
 									+ line_index + " and the segment " + 
 									other_line_index + ". \n");
 						}
@@ -103,7 +103,7 @@ public class Algorithm {
 		}
 		
 		if (num_intersections == 0) {
-			this.output_file.writeChars("No intersections. \n\n");
+			this.output_file.writeBytes("No intersections. \n\n");
 		}
 		this.output_file.close();
 	}
