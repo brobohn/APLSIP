@@ -65,7 +65,7 @@ public class Event implements Comparable<Event> {
 		else {
 			// Event Type is LOWER. It comes after other events with equivalent
 			// y-values.
-			if (this.getY() < that.getY()) { //note the change to strict ineq.
+			if (this.getY() > that.getY()) { //note the change to strict ineq.
 				return -1;
 			} else {
 				return 1;
