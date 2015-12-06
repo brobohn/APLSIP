@@ -3,8 +3,8 @@
  */
 public class VLS extends LineSegment {
 	// Fields
-	private Point upper;
-	private Point lower;
+	public Point upper;
+	public Point lower;
 
 	/**
 	 * Initialize a VLS with coordinates.

@@ -3,8 +3,8 @@
  */
 public class HLS extends LineSegment {
 	//Fields
-	private Point left;
-	private Point right;
+	public Point left;
+	public Point right;
 	
 	public HLS(int xLe, int xRi, int yLe, int yRi) {
 		Point left = new Point(xLe, yRi);
@@ -13,6 +13,7 @@ public class HLS extends LineSegment {
 		this.left = left;
 		this.right = right;
 	}
+	
 	
 	/**
 	 * Return a String representation of this HLS.
