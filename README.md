@@ -5,12 +5,20 @@ December 9, 2015
 Members: Ben Robohn, Brittany Barnes, Ryan Karel
 
 To compile and run all cases (n = 10, 100, 500, 1000, 2000, 10000, 20000):
+
+ON LINUX/MAC:
+Navigate to the unzipped submission directory and type the commands:
 ./make.sh
 ./run.sh
 
-This produces seven output files denoted "output_file_<time in ms>"
+ON WINDOWS:
+Navigate to the unzipped submission directory and type the commands:
+make.bat
+run.bat
 
-Included Output Files:
+This produces seven output files denoted "output_file_<start time in ms>"
+
+Included Output Files in directory submission_output:
 1. output_file_1449451037331
 2. output_file_1449451037644
 3. output_file_1449451037988
@@ -20,7 +28,7 @@ Included Output Files:
 7. output_file_1449451041847
 
 Corresponding Plot (for included output files, created in Excel):
-<insert plot name>
+plot.jpg
 
 Outside Code Utilized:
 - Java's sort() function
