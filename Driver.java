@@ -83,18 +83,6 @@ public class Driver {
 				usage();
 				System.exit(-1);
 			}
-		} else if (args.length == 2) {
-			if (args[0].compareTo("-b") == 0) {
-				try {
-					n = Integer.parseInt(args[1]);
-				} catch (NumberFormatException nfe) {
-					usage();
-					System.exit(-1);
-				}
-			} else {
-				usage();
-				System.exit(-1);
-			}
 		} else {
 			usage();
 			System.exit(-1);
@@ -107,9 +95,7 @@ public class Driver {
 	}
 
 	private static void usage() {
-		System.out.println("Run as: java Driver [NUM]");
-		System.out.println("        OR");
-		System.out.println("        java Driver -b [NUM]");
+		System.out.println("Run as: java -jar APLSIP.jar [NUM]");
 	}
 
 }
