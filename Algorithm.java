@@ -132,6 +132,8 @@ public class Algorithm {
 	 */
 	public void algorithm(LineSegment[] lines, EventList E, SweepLine sweeper) throws IOException {
 		// insert lines into E
+		int num_intersections = 0;
+
 		for (LineSegment line : lines) {
 			Event e = null;
 			
@@ -156,16 +158,18 @@ public class Algorithm {
 		// sort E
 		E.sort();
 		
-		Event event;
+		Event event = E.getNextEvent();
 		
 		// for each event in E
-		while ((event = E.getNextEvent()) != null) {
+		while (event != null) {
 			
 			if (event.type == EventType.UPPER) {
 				// Upper endpoint: insert VLS into tree
+				//output_file.writeBytes("adding UPPER\n");
 				sweeper.addSegment(event.segment);
 						
 			} else if (event.type == EventType.HORIZ) {
+				//output_file.writeBytes("checking HORIZ\n");
 				// Horizontal line: check for intersections
 				HLS hls = (HLS) event.segment;
 				
@@ -179,13 +183,23 @@ public class Algorithm {
 					String POI = String.format("(%d, %d)", x, y);
 					
 					this.output_file.writeBytes("Intersection at " + POI + ". \n");
+					num_intersections++;
 				}
 				
 			} else { // LOWER
+				//output_file.writeBytes("removing LOWER\n");
 				// Lower endpoint: remove VLS from tree
 				sweeper.removeSegment(event.segment);
 			}
-		}	
+			
+			//this.output_file.writeBytes(String.format("tree: %d nodes\n", sweeper.tree.count()));
+			event = E.getNextEvent();
+		}
+		
+		if (num_intersections == 0) {
+			this.output_file.writeBytes("No intersections. \n\n");
+		}
+		this.output_file.close();
 	}
 
 }

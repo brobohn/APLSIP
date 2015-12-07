@@ -6,13 +6,13 @@ import java.util.ArrayList;
  */
 public class SweepLine {
 	// Fields
-	private BBT tree;
+	BST tree;
 
 	/**
 	 * Initialize a SweepLine with an empty tree.
 	 */
 	public SweepLine() {
-		tree = new BBT();
+		tree = new BST();
 	}
 
 	/**
@@ -39,7 +39,6 @@ public class SweepLine {
 		if (s instanceof VLS) {
 			VLS v = (VLS) s;
 			tree.insert(v);
-			tree.simpleBalance();
 		} else {
 			// you have tried to insert a HLS into the tree
 		}
@@ -53,8 +52,7 @@ public class SweepLine {
 	public void removeSegment(LineSegment s) {
 		if (s instanceof VLS) {
 			VLS v = (VLS) s;
-			tree.delete(v);
-			tree.simpleBalance();
+			tree.remove(v);
 		} else {
 			// you have tried to remove a HLS from the tree
 		}

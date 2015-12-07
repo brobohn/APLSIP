@@ -1,7 +1,7 @@
 /**
  * A Vertical Line Segment. Holds an upper and lower endpoint.
  */
-public class VLS extends LineSegment {
+public class VLS extends LineSegment implements Comparable<VLS> {
 	// Fields
 	public Point upper;
 	public Point lower;
@@ -48,6 +48,7 @@ public class VLS extends LineSegment {
 	 * @param that
 	 * @return less than 0 if this segment is to the left of that segment.
 	 */
+	@Override
 	public int compareTo(VLS that) {
 		if (this.getX() <= that.getX()) {
 			return -1;
