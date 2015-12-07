@@ -23,6 +23,8 @@ public class Algorithm {
 	 */
 	public void bruteForceAlgorithm(LineSegment[] lines) throws IOException {
 		int num_lines = lines.length;
+		long start = System.currentTimeMillis();
+		
 		this.output_file.writeBytes("Running the brute force algorithm with "+num_lines+" lines. \n");
 		int num_intersections = 0;
 		// Looping through the lines array.
@@ -108,6 +110,10 @@ public class Algorithm {
 		if (num_intersections == 0) {
 			this.output_file.writeBytes("No intersections.");
 		}
+		
+
+		long end = System.currentTimeMillis();
+		this.output_file.writeBytes(String.format("Brute force algorithm completed in %d ms", end-start));
 		this.output_file.writeBytes("\n\n");
 	}
 
@@ -126,10 +132,12 @@ public class Algorithm {
 	 */
 	public void algorithm(LineSegment[] lines, EventList E, SweepLine sweeper)
 			throws IOException {
-		// insert lines into E
+		long start = System.currentTimeMillis();
+		
 		this.output_file.writeBytes("Running the optimized algorithm with "+lines.length+" lines. \n");
 		int num_intersections = 0;
 
+		// insert lines into E
 		for (LineSegment line : lines) {
 			Event e = null;
 
@@ -198,6 +206,10 @@ public class Algorithm {
 		if (num_intersections == 0) {
 			this.output_file.writeBytes("No intersections. \n\n");
 		}
+		
+		long end = System.currentTimeMillis();
+		this.output_file.writeBytes(String.format("Optimized algorithm completed in %d ms", end-start));
+		
 		this.output_file.close();
 	}
 
