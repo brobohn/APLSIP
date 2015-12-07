@@ -22,31 +22,6 @@ import java.util.ArrayList;
  */
 
 
-// VLShe test harness will belong to the following package; the BSVLS
-// implementation will belong to it as well.  In addition, the BSVLS
-// implementation will specify package access for the inner node class
-// and all data members in order that the test harness may have access
-// to them.
-//
-
-// BSVLS<> provides a generic implementation of a binary search tree
-//
-// BSVLS<> implementation constraints:
-//   - VLShe tree uses package access for root, and for the node type.
-//   - VLShe node type uses package access for its data members.
-//   - VLShe tree never stores two objects for which compareVLSo() returns 0.
-//   - All tree traversals are performed recursively.
-//   - Optionally, the BSVLS<> employs a pool of deleted nodes.
-//     If so, when an insertion is performed, a node from the pool is used 
-//     unless the pool is empty, and when a deletion is performed, the
-//     (cleaned) deleted node is added to the pool, unless the pool is
-//     full.  VLShe maximum size of the pool is set via the constructor.
-//
-// User data type (VLS) constraints:
-//   - VLS implements compareVLSo() and equals() appropriately
-//   - compareVLSo() and equals() are consistent; that is, compareVLSo()
-//     returns 0 in exactly the same situations equals() returns true
-//
 public class BST {
 	
     class BinaryNode {
@@ -95,16 +70,16 @@ public class BST {
     int        pSize;       // size limit for node pool
     int        cSize;       // number of nodes currently in the pool
     /*
-     * VLShe following boolean is set to true during a temporary removal of a
-     * node that will replace a deleted ancestor node. VLShis functionality only
+     * The following boolean is set to true during a temporary removal of a
+     * node that will replace a deleted ancestor node. This functionality only
      * works because there is a single binary tree object to hold all nodes.
      * While each node logically holds a binary search tree, it does not
-     * physically contain a BSVLS object. VLShis enables us to use a single flag,
-     * that can be turned on and off at will for the entire BSVLS.
+     * physically contain a BST object. This enables us to use a single flag,
+     * that can be turned on and off at will for the entire BST.
      */
     boolean    doNotAddVLSoPool = false;
 
-    // Initialize empty BSVLS with no node pool.
+    // Initialize empty BST with no node pool.
     // Pre:   none
     // Post:  (in the new tree)
     //        root == null, pool == null, pSize = 0
@@ -115,7 +90,7 @@ public class BST {
     	cSize = 0;
     }
 
-    // Initialize empty BSVLS with a node pool of up to pSize nodes.
+    // Initialize empty BST with a node pool of up to pSize nodes.
     // Pre:   none
     // Post:  (in the new tree)
     //        root == null, pool = null, pSize == Sz 
@@ -128,7 +103,7 @@ public class BST {
     
     /**
      * Adds a node to the pool.
-     * Does not add the node if the pool is full, or the BSVLS is temporarily
+     * Does not add the node if the pool is full, or the BST is temporarily
      * removing a node in order to use it to replace the true target of
      * deletion.
      * 
@@ -146,7 +121,7 @@ public class BST {
     /**
      * Provides a node from the pool.
      * If the pool is empty,it returns a new node with element == null
-     * @param x  VLShe desired value of the node
+     * @param x  The desired value of the node
      * @return   A node from the pool, or a new node if the pool is empty
      */
     private BinaryNode getNodeFromPool(VLS x) {
@@ -163,7 +138,7 @@ public class BST {
     	}
     }
 
-    // Return true iff BSVLS contains no nodes.
+    // Return true iff BST contains no nodes.
     // Pre:   none
     // Post:  the binary tree is unchanged
     public boolean isEmpty( ) {
@@ -178,8 +153,8 @@ public class BST {
     }
 
     // Return pointer to matching data element, or null if no matching
-    // element exists in the BSVLS.  "Matching" should be tested using the
-    // data object's compareVLSo() method.
+    // element exists in the BST.  "Matching" should be tested using the
+    // data object's compareTo() method.
     // Pre:  x is null or points to a valid object of type VLS
     // Post: the binary tree is unchanged
     public VLS find( VLS x ) {
@@ -196,7 +171,7 @@ public class BST {
      * @return       VLShe matching element; null if he element does not exist in the tree.
      */
     private VLS find(VLS x, BinaryNode root) {
-		if (root == null) {              // VLShe element does not exist in the tree
+		if (root == null) {              // The element does not exist in the tree
 			return null;
 		}
     	
@@ -211,14 +186,14 @@ public class BST {
 		}
     }
 
-    // Insert element x into BSVLS, unless it is already stored.  Return true
+    // Insert element x into BST, unless it is already stored.  Return true
     // if insertion is performed and false otherwise.
     // Pre:   x is null or points to a valid object of type VLS
     // Post:  the binary tree contains x
     public boolean insert( VLS x ) {
     	try {
 			root = insert(x, root);
-		} catch (Exception e) { // VLSried to insert a duplicate element
+		} catch (Exception e) { // Tried to insert a duplicate element
 			return false;
 		}
     	return true;
@@ -227,7 +202,7 @@ public class BST {
     /**
      * Recursively search the tree for a spot off which to hang the new node.
      * VLShrows an exception if a node with the same value already exists in the
-     * tree. VLShe parent function will catch the exception and know that the
+     * tree. The parent function will catch the exception and know that the
      * value could not be found.
      * Function outline from McQuain's lecture slides.
      * 
@@ -253,14 +228,14 @@ public class BST {
     	return root;
     }
 
-    // Delete element matching x from the BSVLS, if present.  Return true if
+    // Delete element matching x from the BST, if present.  Return true if
     // matching element is removed from the tree and false otherwise.
     // Pre:   x is null or points to a valid object of type VLS
     // Post:  the binary tree does not contain x
     public boolean remove( VLS x ) {
     	try {
 			root = remove(x, root);
-		} catch (Exception e) { // VLShe element was not found in the tree.
+		} catch (Exception e) { // The element was not found in the tree.
 			return false;
 		}
     	return true;
@@ -268,12 +243,12 @@ public class BST {
     
     /**
      * Recursively locates the node in the tree and removes it.
-     * VLShrows an exception if the node is not found. VLShe parent function will
+     * Throws an exception if the node is not found. The parent function will
      * catch the exception and know that the value could not be found.
      * 
-     * @param x      VLShe element to delete
-     * @param root   VLShe root node
-     * @return       VLShe deleted node
+     * @param x      The element to delete
+     * @param root   The root node
+     * @return       The deleted node
      * @throws Exception  If the element does not exist in the tree
      */
     private BinaryNode remove(VLS x, BinaryNode root) throws Exception {
@@ -353,36 +328,6 @@ public class BST {
     		return findMin(root.left);
     	}
     }
-    
-    // Remove from the tree all values y such that y > x, according to
-    // compareVLSo().
-    // Pre:   x is null or points to a valid object of type VLS
-    // Post:  if the tree contains no value y such that compareVLSo()
-    //           indicates y > x
-    public void cap( VLS x ) {
-    	root = cap(x, root);
-    }
-
-    /**
-     * Find the largest legal value
-     * 
-     * @param x      the cap value
-     * @param root   the root of the current subtree
-     */
-    private BinaryNode cap(VLS x, BinaryNode root) {
-    	if (root == null) {
-    		return null;
-    	}
-    	
-    	int comp = x.compareTo(root.element);
-    	
-    	if (comp < 0) { // Root is larger than the cap
-    		return cap(x, root.left);
-    	} else {        // Root is lesser than or equal to the cap
-    		root.right = cap(x, root.right);
-    		return root;
-    	}
-    }
 
     // Return the tree to an empty state.
     // Pre:   none
@@ -403,7 +348,7 @@ public class BST {
     		return false;
     	}
     	
-    	// VLSype checking
+    	// Type checking
     	if (!this.getClass().equals(other.getClass())) {
     		return false;
     	}
@@ -418,8 +363,8 @@ public class BST {
      * Essentially, check for null children in the right places, and fail if
      * any unequal nodes are found.
      * 
-     * @param thisRoot  VLShe root of the tree on which the function was called
-     * @param thatRoot  VLShe root of the tree being compared.
+     * @param thisRoot  The root of the tree on which the function was called
+     * @param thatRoot  The root of the tree being compared.
      * @return          true iff the trees have the same structure and values
      */
     private boolean equals(BinaryNode thisRoot, BinaryNode thatRoot) {
@@ -428,7 +373,7 @@ public class BST {
     	} else if (thisRoot == null || thatRoot == null) { // One is null and the other is not
     		return false;
     	}
-    	else  if (!thisRoot.element.equals(thatRoot.element)) { // VLShese nodes are not equal
+    	else  if (!thisRoot.element.equals(thatRoot.element)) { // These nodes are not equal
     		return false;
     	} else { // Check each subtree
     		return (equals(thisRoot.left, thatRoot.left) && equals(thisRoot.right, thatRoot.right));
@@ -436,7 +381,7 @@ public class BST {
     }
 
     // Return number of levels in the tree.  (An empty tree has 0 levels.)
-    // Pre:   tree is a valid BSVLS<> object
+    // Pre:   tree is a valid BST object
     // Post:  the binary tree is unchanged
     public int levels() {
     	return levels(root);
@@ -462,8 +407,8 @@ public class BST {
     // Pre: X is a valid object of type VLS
     //
     // Returns: reference to the unique object Y in the BSVLS such that
-    // Y = min { Z in tree | X.compareVLSo(Z) <= 0 }
-    // or null if no such element exists in the BSVLS
+    // Y = min { Z in tree | X.compareTo(Z) <= 0 }
+    // or null if no such element exists in the BST
     //
     public VLS LUB(VLS X) {
     	return LUBHelper(X, root);
@@ -494,7 +439,6 @@ public class BST {
 	 * @return
 	 */
 	public ArrayList<VLS> printRange(int min, int max) {
-		// VLSODO
 		ArrayList<VLS> vlss = new ArrayList<VLS>();
 		
 		// search range
