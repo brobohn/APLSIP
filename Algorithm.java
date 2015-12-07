@@ -23,7 +23,7 @@ public class Algorithm {
 	 */
 	public void bruteForceAlgorithm(LineSegment[] lines) throws IOException {
 		int num_lines = lines.length;
-		this.output_file.writeBytes("Running the brute force algorithm. \n");
+		this.output_file.writeBytes("Running the brute force algorithm with "+num_lines+" lines. \n");
 		int num_intersections = 0;
 		// Looping through the lines array.
 
@@ -59,10 +59,9 @@ public class Algorithm {
 							// point of intersection = POI
 							String POI = "(" + Integer.toString(vert_x) + ", "
 									+ Integer.toString(horz_y) + ")";
-							this.output_file.writeBytes("Intersection at "
-									+ POI + " between the segment "
-									+ line_index + " and the segment "
-									+ other_line_index + ". \n");
+							this.output_file.writeBytes("Intersection at " + POI
+									+ " between " + horiz_line.toString() + " and "
+									+ vert_line.toString() + "\n");
 						}
 					}
 					// If no intersection, don't do anything.
@@ -91,10 +90,9 @@ public class Algorithm {
 							// point of intersection = POI
 							String POI = "(" + Integer.toString(vert_x) + ", "
 									+ Integer.toString(horz_y) + ")";
-							this.output_file.writeBytes("Intersection at "
-									+ POI + " between the segment "
-									+ line_index + " and the segment "
-									+ other_line_index + ". \n");
+							this.output_file.writeBytes("Intersection at " + POI
+									+ " between " + horiz_line.toString() + " and "
+									+ vert_line.toString() + "\n");
 						}
 					}
 					// If no intersection, don't do anything.
@@ -108,8 +106,9 @@ public class Algorithm {
 		}
 
 		if (num_intersections == 0) {
-			this.output_file.writeBytes("No intersections. \n\n");
+			this.output_file.writeBytes("No intersections.");
 		}
+		this.output_file.writeBytes("\n\n");
 	}
 
 	/**
@@ -128,7 +127,7 @@ public class Algorithm {
 	public void algorithm(LineSegment[] lines, EventList E, SweepLine sweeper)
 			throws IOException {
 		// insert lines into E
-		this.output_file.writeBytes("Running the optimized algorithm. \n");
+		this.output_file.writeBytes("Running the optimized algorithm with "+lines.length+" lines. \n");
 		int num_intersections = 0;
 
 		for (LineSegment line : lines) {

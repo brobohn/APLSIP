@@ -244,9 +244,7 @@ public class BST {
     	
     	int comp = x.compareTo(root.element);
     	
-    	if (comp == 0) {                        // Duplicate node
-    		throw new Exception("Duplicate item.");
-    	} else if (comp < 0) {                  // Search left subtree to find a spot on which to hang the node
+    	if (comp < 0) {                  // Search left subtree to find a spot on which to hang the node
     		root.left = insert(x, root.left);
     	} else {                                // Search right subtree to find a spot on which to hang the node
     		root.right = insert(x, root.right);

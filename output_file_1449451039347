@@ -1,0 +1,14 @@
+Running the brute force algorithm with 10000 lines. 
+Intersection at (87496, 48908) between (87495, 48908)-(87520, 48908) and (87496, 48897)-(87496, 48922)
+Intersection at (50622, 61968) between (50603, 61968)-(50628, 61968) and (50622, 61949)-(50622, 61974)
+Intersection at (3385, 18297) between (3378, 18297)-(3403, 18297) and (3385, 18281)-(3385, 18306)
+Intersection at (14461, 35914) between (14438, 35914)-(14463, 35914) and (14461, 35912)-(14461, 35937)
+Intersection at (35085, 75690) between (35065, 75690)-(35090, 75690) and (35085, 75665)-(35085, 75690)
+
+
+Running the optimized algorithm with 10000 lines. 
+Intersection at (35085, 75690) between (35085, 75665)-(35085, 75690) and (35065, 75690)-(35090, 75690)
+Intersection at (50622, 61968) between (50622, 61949)-(50622, 61974) and (50603, 61968)-(50628, 61968)
+Intersection at (87496, 48908) between (87496, 48897)-(87496, 48922) and (87495, 48908)-(87520, 48908)
+Intersection at (14461, 35914) between (14461, 35912)-(14461, 35937) and (14438, 35914)-(14463, 35914)
+Intersection at (3385, 18297) between (3385, 18281)-(3385, 18306) and (3378, 18297)-(3403, 18297)

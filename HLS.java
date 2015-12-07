@@ -7,8 +7,8 @@ public class HLS extends LineSegment {
 	public Point right;
 	
 	public HLS(int xLe, int xRi, int yLe, int yRi) {
-		Point left = new Point(xLe, yRi);
-		Point right = new Point(xLe, yRi);
+		Point left = new Point(xLe, yLe);
+		Point right = new Point(xRi, yRi);
 
 		this.left = left;
 		this.right = right;

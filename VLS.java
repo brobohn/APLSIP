@@ -50,7 +50,10 @@ public class VLS extends LineSegment implements Comparable<VLS> {
 	 */
 	@Override
 	public int compareTo(VLS that) {
-		if (this.getX() <= that.getX()) {
+		if (this.getX() == that.getX()) {
+			return 0;
+		}
+		else if (this.getX() < that.getX()) {
 			return -1;
 		} else {
 			return 1;
