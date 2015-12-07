@@ -39,7 +39,7 @@ On Windows:
 Navigate to the unzipped submission directory and simply type the commands:
 run.bat
 
-This produces seven output files named "output_file_<start time in ms>". Each contains the number of lines used in the test and the intersections reported.
+This produces seven output files named "output_file_<start time in ms>". Each contains the number of lines used in the test, intersections reported, and the time taken by both the brute force and optimized algorithm.
 
 To view the source code, type "jar xf APLSIP.jar". All source code and compiled machine code is included in that jar.
 
