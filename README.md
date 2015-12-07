@@ -9,7 +9,11 @@ SUBMISSION DETAILS
 
 The submission CS_4104_project.zip includes:
 - APLSIP.jar
+- make.bat
+- make.sh
 - plot.jpg
+- run.bat
+- run.sh
 - submission_output
 	- output_file_1449451037331
 	- output_file_1449451037644
@@ -22,6 +26,8 @@ The submission CS_4104_project.zip includes:
 "APLSIP.jar" is executable, and contains all source code and compiled machine code.
 "plot.jpg" shows the run times of the tests for the seven included files.
 "submission_output" is a directory containing the seven output files which were produced in our final test run.
+"make.sh" and "make.bat" compile source code on Linux/Mac and Windows respectively, producing APLSIP.jar. You will not need to run "make" to test the submission.
+"run.sh" and "run.bat" run all 7 test cases on Linux/Mac and Windows respectively.
 
 -------------------------------------------------------------------------------
 RUNNING INSTRUCTIONS
