@@ -7,7 +7,7 @@ Intersection at (21818, 24515) between (21816, 24515)-(21841, 24515) and (21818,
 Intersection at (52214, 36807) between (52207, 36807)-(52232, 36807) and (52214, 36788)-(52214, 36813)
 Intersection at (96954, 23734) between (96944, 23734)-(96969, 23734) and (96954, 23714)-(96954, 23739)
 Intersection at (16835, 19197) between (16827, 19197)-(16852, 19197) and (16835, 19183)-(16835, 19208)
-
+Brute force algorithm completed in 7750 ms
 
 Running the optimized algorithm with 20000 lines. 
 Intersection at (37327, 78214) between (37327, 78199)-(37327, 78224) and (37312, 78214)-(37337, 78214)
@@ -18,3 +18,4 @@ Intersection at (52214, 36807) between (52214, 36788)-(52214, 36813) and (52207,
 Intersection at (21818, 24515) between (21818, 24510)-(21818, 24535) and (21816, 24515)-(21841, 24515)
 Intersection at (96954, 23734) between (96954, 23714)-(96954, 23739) and (96944, 23734)-(96969, 23734)
 Intersection at (16835, 19197) between (16835, 19183)-(16835, 19208) and (16827, 19197)-(16852, 19197)
+Optimized algorithm completed in 125 ms
