@@ -46,5 +46,6 @@ To view the source code, type "jar xf APLSIP.jar". All source code and compiled 
 -------------------------------------------------------------------------------
 IMPLEMENTATION NOTES
 
+All lines have an endpoint in a 100,000x100,000 grid. The spec lists upper bounds of 1,000,000 but we found that this large area rarely resulted in any intersections.
 We utilized Java's built-in Collections.sort() method which uses a modified merge sort algorithm which guarantees time complexity of O(n log(n)) and space complexity of O(n) in the worst case.
 We used our own implementation of a BST, which has been thoroughly tested.
