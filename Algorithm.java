@@ -114,7 +114,6 @@ public class Algorithm {
 		if (num_intersections == 0) {
 			this.output_file.writeBytes("No intersections. \n\n");
 		}
-		this.output_file.close();
 	}
 
 	/**
