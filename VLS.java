@@ -62,7 +62,7 @@ public class VLS extends LineSegment implements Comparable<VLS> {
 	 */
 	public String toString() {
 		// TODO
-		return "";
+		return String.format("(%d, %d)-(%d, %d)", lower.getX(), lower.getY(), upper.getX(), upper.getY());
 	}
 
 }

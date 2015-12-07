@@ -131,6 +131,7 @@ public class Algorithm {
 	 */
 	public void algorithm(LineSegment[] lines, EventList E, SweepLine sweeper) throws IOException {
 		// insert lines into E
+		this.output_file.writeBytes("Running the optimized algorithm. \n");
 		int num_intersections = 0;
 
 		for (LineSegment line : lines) {
