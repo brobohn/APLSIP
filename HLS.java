@@ -27,7 +27,7 @@ public class HLS extends LineSegment {
 	 * Return a String representation of this HLS.
 	 */
 	public String toString() {
-		//TODO
-		return null;
+		return String.format("(%d, %d)-(%d, %d)", left.getX(), left.getY(),
+				right.getX(), right.getY());
 	}
 }
