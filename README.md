@@ -36,8 +36,14 @@ Navigate to the unzipped submission directory and simply type the command:
 ./run.sh
 
 On Windows:
-Navigate to the unzipped submission directory and simply type the commands:
+Navigate to the unzipped submission directory and simply type the command:
 run.bat
+
+NOTE: If for any reason these scripts do not run correctly, type:
+
+java -jar APLSIP.jar [NUM]
+
+where NUM is the n-value to send the program. This will run the brute force and optimized algorithm for the specified n-value.
 
 This produces seven output files named "output_file_<start time in ms>". Each contains the number of lines used in the test, intersections reported, and the time taken by both the brute force and optimized algorithm.
 
