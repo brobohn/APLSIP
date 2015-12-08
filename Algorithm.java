@@ -25,7 +25,7 @@ public class Algorithm {
 		int num_lines = lines.length;
 		long start = System.currentTimeMillis();
 		
-		this.output_file.writeBytes("Running the brute force algorithm with "+num_lines+" lines. \n");
+		this.output_file.writeBytes("Running the brute force algorithm n = " + lines.length/2 + "\n");
 		int num_intersections = 0;
 		// Looping through the lines array.
 
@@ -134,7 +134,7 @@ public class Algorithm {
 			throws IOException {
 		long start = System.currentTimeMillis();
 		
-		this.output_file.writeBytes("Running the optimized algorithm with "+lines.length+" lines. \n");
+		this.output_file.writeBytes("Running the optimized algorithm with n = " + lines.length/2 + "\n");
 		int num_intersections = 0;
 
 		// insert lines into E

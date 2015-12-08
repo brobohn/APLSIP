@@ -23,7 +23,7 @@ public class LineGenerator {
 	 */
 	public LineSegment[] generateLines(int n) 
 	{
-		LineSegment[] line_segments = new LineSegment[n];
+		LineSegment[] line_segments = new LineSegment[2*n];
 		
 		Random rand_cord = new Random();	// for generating coordinates
 		Random rand_type = new Random();	// for generating the segment type: odd=horiz; even=vert

@@ -40,7 +40,7 @@ public class Driver {
 			long start = System.currentTimeMillis();
 		
 			System.out.println(String.format(
-					"Running brute force algorithm with %d lines...", lines.length));
+					"Running brute force algorithm with n = %d...", lines.length/2));
 			try {
 				A.bruteForceAlgorithm(lines);
 			} catch (IOException e) {
@@ -52,7 +52,7 @@ public class Driver {
 			System.out.println(String.format("Brute force algorithm completed in %d ms", mid-start));
 			
 			System.out.println(String.format(
-					"Running optimized algorithm with %d lines...", lines.length));
+					"Running optimized algorithm with n = %d...", lines.length/2));
 			try {
 				A.algorithm(lines, E, sweeper);
 			} catch (IOException e) {
