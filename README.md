@@ -13,13 +13,13 @@ The submission CS_4104_project.zip includes:
 - run.bat
 - run.sh
 - submission_output
-	- output_file_1449451037331
-	- output_file_1449451037644
-	- output_file_1449451037988
-	- output_file_1449451038394
-	- output_file_1449451038863
-	- output_file_1449451039347
-	- output_file_1449451041847
+	- output_file_1449593114750
+	- output_file_1449593114862
+	- output_file_1449593114945
+	- output_file_1449593115075
+	- output_file_1449593115224
+	- output_file_1449593115437
+	- output_file_1449593116823
 
 "APLSIP.jar" is executable, and contains all source code and compiled machine code.
 "plot.jpg" shows the run times of the tests for the seven included files.
@@ -44,8 +44,17 @@ This produces seven output files named "output_file_<start time in ms>". Each co
 To view the source code, type "jar xf APLSIP.jar". All source code and compiled machine code is included in that jar.
 
 -------------------------------------------------------------------------------
+DESCRIPTION OF MAJOR CLASSES
+- Driver: Contains the main method and handles console output. Kicks of both algorithms in each invocation.
+- LineGenerator: Generates n vertical and n horizontal lines. Passes them to Driver as an array.
+- Algorithm: Contains both the brute force algorithm and the optimized algorithm. Runs both algorithms and outputs results to a file.
+- BST: A binary search tree of Vertical Line Segments ordered by x-value.
+- EventList: An ordered list of Events.
+- SweepLine: Holds the BST and reacts to Events in the EventList.
+
+-------------------------------------------------------------------------------
 IMPLEMENTATION NOTES
 
-All lines have an endpoint in a 100,000x100,000 grid. The spec lists upper bounds of 1,000,000 but we found that this large area rarely resulted in any intersections.
+All lines have an endpoint in a 100,000x100,000 grid. The spec lists upper bounds of 1,000,000 but we found that this large area rarely resulted in any intersections for the given n values.
 We utilized Java's built-in Collections.sort() method which uses a modified merge sort algorithm which guarantees time complexity of O(n log(n)) and space complexity of O(n) in the worst case.
 We used our own implementation of a BST, which has been thoroughly tested.
