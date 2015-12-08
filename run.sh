@@ -1,4 +1,4 @@
-#!/bin/bash/
+#!/bin/bash
 
 java -jar APLSIP.jar 10
 java -jar APLSIP.jar 100
