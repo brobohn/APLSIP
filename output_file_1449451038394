@@ -1,7 +1,0 @@
-Running the brute force algorithm with 1000 lines. 
-No intersections.
-Brute force algorithm completed in 93 ms
-
-Running the optimized algorithm with 1000 lines. 
-No intersections. 
-Optimized algorithm completed in 32 ms

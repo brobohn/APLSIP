@@ -28,16 +28,15 @@ public class LineGenerator {
 		Random rand_cord = new Random();	// for generating coordinates
 		Random rand_type = new Random();	// for generating the segment type: odd=horiz; even=vert
 		
-		int x, y, type; 
+		int x, y; 
 		
 		// generate the segments 
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < 2*n; i++)
 		{
-			type = rand_type.nextInt(MAX + 1) + 1;	// between 1 and MAX 
 			x 	 = rand_cord.nextInt(MAX + 1);  	// between 0 and MAX
 			y 	 = rand_cord.nextInt(MAX + 1);  	// between 0 and MAX
 			
-			if (type % 2 == 0)	// even = vertical segment
+			if (i % 2 == 0)	// even = vertical segment
 			{
 				// randomly generate the Y-coordinate of its bottom endpoint
 				VLS v_seg = new VLS(x, x, y, y + 25);
