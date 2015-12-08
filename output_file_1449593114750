@@ -1,0 +1,7 @@
+Running the brute force algorithm n = 10
+No intersections.
+Brute force algorithm completed in 0 ms
+
+Running the optimized algorithm with n = 10
+No intersections.
+Optimized algorithm completed in 6 ms

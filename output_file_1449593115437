@@ -1,0 +1,21 @@
+Running the brute force algorithm n = 10000
+Intersection at (85226, 37058) between (85217, 37058)-(85242, 37058) and (85226, 37057)-(85226, 37082)
+Intersection at (47463, 51913) between (47456, 51913)-(47481, 51913) and (47463, 51903)-(47463, 51928)
+Intersection at (36181, 76537) between (36175, 76537)-(36200, 76537) and (36181, 76519)-(36181, 76544)
+Intersection at (1724, 86368) between (1706, 86368)-(1731, 86368) and (1724, 86358)-(1724, 86383)
+Intersection at (36196, 12690) between (36186, 12690)-(36211, 12690) and (36196, 12689)-(36196, 12714)
+Intersection at (62261, 20984) between (62254, 20984)-(62279, 20984) and (62261, 20967)-(62261, 20992)
+Intersection at (68459, 70261) between (68452, 70261)-(68477, 70261) and (68459, 70240)-(68459, 70265)
+Intersection at (41593, 18444) between (41577, 18444)-(41602, 18444) and (41593, 18435)-(41593, 18460)
+Brute force algorithm completed in 1252 ms
+
+Running the optimized algorithm with n = 10000
+Intersection at (1724, 86368) between (1724, 86358)-(1724, 86383) and (1706, 86368)-(1731, 86368)
+Intersection at (36181, 76537) between (36181, 76519)-(36181, 76544) and (36175, 76537)-(36200, 76537)
+Intersection at (68459, 70261) between (68459, 70240)-(68459, 70265) and (68452, 70261)-(68477, 70261)
+Intersection at (47463, 51913) between (47463, 51903)-(47463, 51928) and (47456, 51913)-(47481, 51913)
+Intersection at (85226, 37058) between (85226, 37057)-(85226, 37082) and (85217, 37058)-(85242, 37058)
+Intersection at (62261, 20984) between (62261, 20967)-(62261, 20992) and (62254, 20984)-(62279, 20984)
+Intersection at (41593, 18444) between (41593, 18435)-(41593, 18460) and (41577, 18444)-(41602, 18444)
+Intersection at (36196, 12690) between (36196, 12689)-(36196, 12714) and (36186, 12690)-(36211, 12690)
+Optimized algorithm completed in 46 ms
