@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * Generates a specified number of line segments.
  * 
- * These segment will each be of length 25, and no endpoint shall have an X- or
+ * These segments will each be of length 25, and no endpoint shall have an X- or
  * Y-coordinate less than 0 or greater than 1,000,000.
  *
  */
@@ -26,7 +26,6 @@ public class LineGenerator {
 		LineSegment[] line_segments = new LineSegment[2*n];
 		
 		Random rand_cord = new Random();	// for generating coordinates
-		Random rand_type = new Random();	// for generating the segment type: odd=horiz; even=vert
 		
 		int x, y; 
 		
