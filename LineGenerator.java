@@ -8,8 +8,9 @@ import java.util.Random;
  *
  */
 public class LineGenerator {
-	final int LENGTH = 25;
-	final int MAX = 100000;
+	final int LENGTH = 100;
+	final int BOUNDS = 100000;
+	final int MAX = BOUNDS-LENGTH;
 	
 	public LineGenerator() 
 	{
