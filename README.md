@@ -13,13 +13,13 @@ The submission CS_4104_project.zip includes:
 - run.bat
 - run.sh
 - submission_output
-	- output_file_1449593114750
-	- output_file_1449593114862
-	- output_file_1449593114945
-	- output_file_1449593115075
-	- output_file_1449593115224
-	- output_file_1449593115437
-	- output_file_1449593116823
+	- output_file_1449636254885
+	- output_file_1449636254977
+	- output_file_1449636255086
+	- output_file_1449636255219
+	- output_file_1449636255372
+	- output_file_1449636255545
+	- output_file_1449636256885
 
 "APLSIP.jar" is executable, and contains all source code and compiled machine code.
 "plot.jpg" shows the run times of the tests for the seven included files.
@@ -61,6 +61,5 @@ DESCRIPTION OF MAJOR CLASSES
 -------------------------------------------------------------------------------
 IMPLEMENTATION NOTES
 
-All lines have an endpoint in a 100,000x100,000 grid. The spec lists upper bounds of 1,000,000 but we found that this large area rarely resulted in any intersections for the given n values.
 We utilized Java's built-in Collections.sort() method which uses a modified merge sort algorithm which guarantees time complexity of O(n log(n)) and space complexity of O(n) in the worst case.
 We used our own implementation of a BST, which has been thoroughly tested.
