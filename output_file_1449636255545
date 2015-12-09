@@ -1,0 +1,19 @@
+Running the brute force algorithm n = 10000
+Intersection at (60443, 37301) between (60443, 37301)-(60468, 37301) and (60443, 37277)-(60443, 37302)
+Intersection at (19857, 77363) between (19837, 77363)-(19862, 77363) and (19857, 77341)-(19857, 77366)
+Intersection at (27399, 21041) between (27393, 21041)-(27418, 21041) and (27399, 21040)-(27399, 21065)
+Intersection at (44273, 67723) between (44267, 67723)-(44292, 67723) and (44273, 67721)-(44273, 67746)
+Intersection at (24558, 4766) between (24540, 4766)-(24565, 4766) and (24558, 4764)-(24558, 4789)
+Intersection at (9610, 27663) between (9594, 27663)-(9619, 27663) and (9610, 27661)-(9610, 27686)
+Intersection at (20543, 53787) between (20543, 53787)-(20568, 53787) and (20543, 53781)-(20543, 53806)
+Brute force algorithm completed in 1182 ms
+
+Running the optimized algorithm with n = 10000
+Intersection at (19857, 77363) between (19857, 77341)-(19857, 77366) and (19837, 77363)-(19862, 77363)
+Intersection at (44273, 67723) between (44273, 67721)-(44273, 67746) and (44267, 67723)-(44292, 67723)
+Intersection at (20543, 53787) between (20543, 53781)-(20543, 53806) and (20543, 53787)-(20568, 53787)
+Intersection at (60443, 37301) between (60443, 37277)-(60443, 37302) and (60443, 37301)-(60468, 37301)
+Intersection at (9610, 27663) between (9610, 27661)-(9610, 27686) and (9594, 27663)-(9619, 27663)
+Intersection at (27399, 21041) between (27399, 21040)-(27399, 21065) and (27393, 21041)-(27418, 21041)
+Intersection at (24558, 4766) between (24558, 4764)-(24558, 4789) and (24540, 4766)-(24565, 4766)
+Optimized algorithm completed in 43 ms

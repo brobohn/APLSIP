@@ -1,0 +1,7 @@
+Running the brute force algorithm n = 2000
+No intersections.
+Brute force algorithm completed in 79 ms
+
+Running the optimized algorithm with n = 2000
+No intersections.
+Optimized algorithm completed in 16 ms

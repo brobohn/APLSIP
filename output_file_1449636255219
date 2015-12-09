@@ -1,0 +1,7 @@
+Running the brute force algorithm n = 1000
+Intersection at (35701, 89773) between (35692, 89773)-(35717, 89773) and (35701, 89770)-(35701, 89795)
+Brute force algorithm completed in 48 ms
+
+Running the optimized algorithm with n = 1000
+Intersection at (35701, 89773) between (35701, 89770)-(35701, 89795) and (35692, 89773)-(35717, 89773)
+Optimized algorithm completed in 14 ms
